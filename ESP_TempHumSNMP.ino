@@ -13,7 +13,7 @@
 
 // A UDP instance to let us send and receive packets over UDP
 WiFiUDP udp;
-SNMPAgent snmp = SNMPAgent("mine");
+SNMPAgent snmp = SNMPAgent("public");
 char* strHumidity;
 char* strTemperature;
 
@@ -26,8 +26,25 @@ float humidity = 0;
 //Variable to store the temperature value
 float temperature = 0;
 
+//*************************************************************************************************
+//NodeMCU v1.0 ESP8266-12e Pin Definitions (makes it much easier as these match the board markings)
+//*************************************************************************************************
+//#define LED_BUILTIN 16
+//#define BUILTIN_LED 16
+//
+//#define D0 16  //no internal pullup resistor
+//#define D1  5
+//#define D2  4
+//#define D3  0  //must not be pulled low during power on/reset, toggles value during boot
+//#define D4  2  //must not be pulled low during power on/reset, toggles value during boot
+#define D5 14
+//#define D6 12
+//#define D7 13
+//#define D8 15  //must not be pulled high during power on/reset
 
-#define DHTPIN 14
+
+
+#define DHTPIN D5
 #define INTERVAL 100
 
 #define SSID "YOUR SSID"
